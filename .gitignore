@@ -205,3 +205,19 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# Node / frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+# Vite
+*.local
+# Logs
+*.log
+# Docker
+*.pid
+volumes/
+# Perf reports
+perf/reports/
+# Archives
+backend.zip
+frontend.zip

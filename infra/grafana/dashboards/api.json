@@ -1,0 +1,15 @@
+{
+  "id": null,
+  "title": "API Metrics",
+  "timezone": "browser",
+  "schemaVersion": 16,
+  "version": 0,
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Requests",
+      "datasource": "Prometheus",
+      "targets": [{ "expr": "up", "refId": "A" }]
+    }
+  ]
+}
