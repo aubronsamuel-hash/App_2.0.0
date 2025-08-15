@@ -1,0 +1,35 @@
+services:
+  api:
+    image: api:${API_TAG}
+    ports:
+      - "${API_PORT:-8001}:8000"
+    depends_on:
+      - postgres
+      - redis
+
+  front:
+    image: front:${FRONT_TAG}
+    ports:
+      - "${FRONT_PORT:-5173}:5173"
+
+  caddy:
+    image: caddy:2
+    ports:
+      - "${CADDY_HTTP_PORT:-8080}:80"
+    depends_on:
+      - api
+      - front
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
