@@ -1,0 +1,18 @@
+[project]
+name = "backend"
+version = "0.1.0"
+dependencies = [
+  "fastapi==0.115.*",
+  "uvicorn[standard]",
+  "gunicorn",
+  "pydantic==2.*",
+  "sqlalchemy[asyncio]==2.*",
+  "asyncpg",
+  "alembic",
+  "passlib[bcrypt]",
+  "python-multipart",
+  "httpx",
+  "redis",
+  "prometheus-client",
+  "structlog"
+]
