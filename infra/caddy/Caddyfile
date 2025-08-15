@@ -1,0 +1,10 @@
+:8080
+
+route /api* {
+    uri strip_prefix /api
+    reverse_proxy api:8001
+}
+
+route /* {
+    reverse_proxy frontend:5173
+}
